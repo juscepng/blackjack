@@ -7,13 +7,16 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         var respostaJogador = "s";
 
-        while (respostaJogador.equals("s")) {
+        while (respostaJogador.equalsIgnoreCase("s")) {
             BlackJackService blackJackService = new BlackJackService();
+
             blackJackService.iniciarJogo();
 
             System.out.println("--- * Vamos jogar de novo? * ---");
             System.out.println("s / n");
-            respostaJogador = scanner.nextLine();
+            respostaJogador = scanner.nextLine().trim();
         }
+
+        scanner.close();
     }
 }
