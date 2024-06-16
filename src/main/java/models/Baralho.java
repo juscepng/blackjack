@@ -14,4 +14,8 @@ public class Baralho {
     public Carta puxarCarta(){
         return baralho.remove(baralho.size() - 1);
     }
+
+    public List<Carta> getBaralho() {
+        return baralho;
+    }
 }

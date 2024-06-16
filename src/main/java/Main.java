@@ -7,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         var respostaJogador = "s";
 
-        while (respostaJogador.equalsIgnoreCase("s")) {
+        do {
             BlackJackService blackJackService = new BlackJackService();
 
             blackJackService.iniciarJogo();
@@ -16,7 +16,9 @@ public class Main {
             System.out.println("s / n");
             respostaJogador = scanner.nextLine().trim();
         }
+        while (respostaJogador.equalsIgnoreCase("s"));
 
         scanner.close();
+        System.out.println("Obrigado por jogar! Até a próxima.");
     }
 }

@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d89cca9-ae14-4835-91ec-055f685b3dbf" name="Changes" comment="Add readme">
+      <change afterPath="$PROJECT_DIR$/src/test/java/BaralhoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/BlackJackServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CartaTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DealerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/JogadorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/BaralhoUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/BaralhoUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Baralho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Baralho.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Dealer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Dealer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Jogador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Jogador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/BlackJackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/BlackJackService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +38,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2hpNIzuWlIJEfLEux0dgUWOZWpa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -41,35 +52,113 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.BaralhoTest.executor": "Run",
+    "JUnit.BlackJackServiceTest,testCartasIniciais and 5 more.executor": "Run",
+    "JUnit.BlackJackServiceTest.executor": "Run",
+    "JUnit.BlackJackServiceTest.testCartasIniciais.executor": "Run",
+    "JUnit.BlackJackServiceTest.testeCartasInciais.executor": "Run",
+    "JUnit.CartaTest.testCriacaoDeCarta.executor": "Run",
+    "JUnit.DealerTest.executor": "Run",
+    "JUnit.JogadorTest.executor": "Run",
+    "JUnit.JogadorTest.testGetJoker.executor": "Run",
+    "JUnit.JogadorTest.testeAdicionarCarta.executor": "Run",
+    "JUnit.java in BlackJack.executor": "Run",
+    "Maven.BlackJack [clean,install,compile].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install compile" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.BaralhoUtilTest">
+    <configuration name="BaralhoUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BlackJack" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BaralhoUtilTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BlackJackServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BlackJack" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BlackJackServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlackJackServiceTest,testCartasIniciais and 5 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BlackJack" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="BlackJackServiceTest,testCartasIniciais" />
+        <pattern testClass="BlackJackServiceTest,testVitoriaImediataJogadorWithJoker" />
+        <pattern testClass="BlackJackServiceTest,testVitoriaImediataJogadorWith21Points" />
+        <pattern testClass="BlackJackServiceTest,testVitoriaImediataJogadorWithoutImmediateWin" />
+        <pattern testClass="BlackJackServiceTest,testVitoriaImediataDealerWithJoker" />
+        <pattern testClass="BlackJackServiceTest,testVitoriaImediataDealerWithoutImmediateWin" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlackJackServiceTest.testCartasIniciais" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BlackJack" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BlackJackServiceTest" />
+      <option name="METHOD_NAME" value="testCartasIniciais" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in BlackJack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BlackJack" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.BaralhoUtilTest" />
+      <item itemvalue="JUnit.BlackJackServiceTest" />
+      <item itemvalue="JUnit.BlackJackServiceTest,testCartasIniciais and 5 more" />
+      <item itemvalue="JUnit.BlackJackServiceTest.testCartasIniciais" />
+      <item itemvalue="JUnit.java in BlackJack" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.BaralhoUtilTest" />
+        <item itemvalue="JUnit.java in BlackJack" />
+        <item itemvalue="JUnit.BlackJackServiceTest" />
+        <item itemvalue="JUnit.BlackJackServiceTest.testCartasIniciais" />
+        <item itemvalue="JUnit.BlackJackServiceTest,testCartasIniciais and 5 more" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-20.0.2-corretto-20.0.2.1-4caba194b151-5bc9ecd2" />
         <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
       </set>
     </attachedChunks>
@@ -83,6 +172,9 @@
       <option name="presentableId" value="Default" />
       <updated>1718286985112</updated>
       <workItem from="1718286986665" duration="12248000" />
+      <workItem from="1718410268141" duration="2000" />
+      <workItem from="1718460717693" duration="6746000" />
+      <workItem from="1718545511489" duration="3049000" />
     </task>
     <task id="LOCAL-00001" summary="Add readme">
       <option name="closed" value="true" />

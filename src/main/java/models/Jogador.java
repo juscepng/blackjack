@@ -1,7 +1,6 @@
 package models;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Jogador {
 
@@ -47,16 +46,11 @@ public class Jogador {
         }
     }
 
-    public void imprimirMao() {
-        boolean primeiro = true;
+    public String imprimirMao() {
+        StringJoiner cartasMao = new StringJoiner(", ");
         for (Carta carta : mao) {
-            if (!primeiro) {
-                System.out.print(", ");
-            } else {
-                primeiro = false;
-            }
-            System.out.print(carta.toString());
+            cartasMao.add(carta.toString());
         }
-        System.out.println();
+        return cartasMao.toString();
     }
 }

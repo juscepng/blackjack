@@ -1,29 +1,26 @@
 package models;
 
 public class Dealer extends Jogador {
-    public void imprimirMaoDealer(){
-        System.out.println(mao.getFirst().toString());
+    public String imprimirMaoDealer() {
+        return mao.get(0).toString();
     }
 
     public boolean validarPuxarCarta(int pontuacaoJogador, int dealerPontuacao) {
 
-        if(dealerPontuacao >= pontuacaoJogador) {
+        if (dealerPontuacao >= pontuacaoJogador) {
             return false;
         }
 
-        if(dealerPontuacao < pontuacaoJogador) {
-            return true;
-        }
+        double probabilidadePuxarCarta;
 
-        if(dealerPontuacao < 15) {
-            System.out.println(Math.random() * 10 / 10 > 0.1);
-            return Math.random() * 10 / 10 > 0.3;
-        } else if(dealerPontuacao > 15 && dealerPontuacao < 18){
-            return Math.random() * 10 / 10 > 0.5;
-        } else if(dealerPontuacao >= 18){
-            return Math.random() * 10 / 10 > 0.7;
+        if (dealerPontuacao <= 10) {
+            probabilidadePuxarCarta = 0.9;
+        } else if (dealerPontuacao < 15) {
+            probabilidadePuxarCarta = 0.7;
         } else {
-            return false;
+            probabilidadePuxarCarta = 0.3;
         }
+
+        return Math.random() < probabilidadePuxarCarta;
     }
 }
