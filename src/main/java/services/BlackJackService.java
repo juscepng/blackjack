@@ -1,5 +1,6 @@
 package services;
 
+import Factory.PlayerFactory;
 import models.Baralho;
 import models.Dealer;
 import models.Jogador;
@@ -11,10 +12,13 @@ public class BlackJackService {
     private final Jogador jogador;
     private final Dealer dealer;
 
-    public BlackJackService() {
+    public BlackJackService(PlayerFactory playerFactory) {
         this.baralho = new Baralho();
-        this.jogador = new Jogador();
-        this.dealer = new Dealer();
+
+        // Com a factory, criamos o jogadore e o dealer, antes do jogo começar.
+
+        this.jogador = playerFactory.criarJogador();
+        this.dealer = playerFactory.criarDealer();
     }
 
     public void iniciarJogo() {

@@ -1,3 +1,4 @@
+import Factory.BlackJackPlayerFactory;
 import services.BlackJackService;
 
 import java.util.Scanner;
@@ -8,7 +9,7 @@ public class Main {
         var respostaJogador = "s";
 
         do {
-            BlackJackService blackJackService = new BlackJackService();
+            BlackJackService blackJackService = new BlackJackService(new BlackJackPlayerFactory());
 
             blackJackService.iniciarJogo();
 
