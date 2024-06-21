@@ -2,14 +2,18 @@ package models;
 
 import java.util.*;
 
+// Adicionamos mais um parametro para o nome do jogador.
+
 public class Jogador {
 
     public List<Carta> mao;
-    private int pontuacao;
+    public int pontuacao;
+    private String nome;
 
-    public Jogador() {
+    public Jogador(String nome) {
         this.mao = new ArrayList<>();
         this.pontuacao = 0;
+        this.nome = nome;
     }
 
     public void adicionarCarta(Carta carta) {
@@ -19,6 +23,10 @@ public class Jogador {
 
     public List<Carta> getMao() {
         return mao;
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public int getPontuacao() {

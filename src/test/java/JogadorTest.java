@@ -5,12 +5,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// Adicionamos o teste para o nome do jogador
+
 public class JogadorTest {
     private Jogador jogador;
 
     @BeforeEach
     public void setJogador(){
-        jogador = new Jogador();
+        jogador = new Jogador("Jusce");
     }
 
     @Test
@@ -41,5 +43,10 @@ public class JogadorTest {
         jogador.adicionarCarta(new Carta("♣ Paus", "10"));
         jogador.adicionarCarta(new Carta("♦ Ouros", "A"));
         assertEquals(21, jogador.getPontuacao());
+    }
+
+    @Test
+    public void testNomeJogador() {
+        assertEquals("Jusce", jogador.getNome());
     }
 }

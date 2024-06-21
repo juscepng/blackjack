@@ -30,4 +30,14 @@ public class BaralhoTest {
         assertThrows(IndexOutOfBoundsException.class, baralho::puxarCarta);
     }
 
+    // Fizemos um teste para validar que o singleton do baralho esta funcionando.
+
+    @Test
+    public void testBaralhoSingleton() {
+        Baralho baralho1 = Baralho.getInstance();
+        Baralho baralho2 = Baralho.getInstance();
+
+        assertSame(baralho1, baralho2, "Deveria haver apenas uma instância de Baralho");
+    }
+
 }

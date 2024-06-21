@@ -1,6 +1,22 @@
 package models;
 
+// Transformamos o dealer em singleton, para termos certeza que so havera um dealer por jogo.
+
 public class Dealer extends Jogador {
+
+    private static Dealer instance;
+
+    private Dealer() {
+        super("Dealer");
+    }
+
+    public static Dealer getInstance() {
+        if (instance == null) {
+            instance = new Dealer();
+        }
+        return instance;
+    }
+
     public String imprimirMaoDealer() {
         return mao.get(0).toString();
     }
@@ -22,5 +38,10 @@ public class Dealer extends Jogador {
         }
 
         return Math.random() < probabilidadePuxarCarta;
+    }
+
+    public void limparMao() {
+        this.mao.clear();
+        this.pontuacao = 0;
     }
 }

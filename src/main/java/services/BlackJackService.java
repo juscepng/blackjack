@@ -7,17 +7,18 @@ import models.Jogador;
 
 import java.util.Scanner;
 
+// Fazemos a instancia do blackjackService passando a factory e o nome do jogador, chamando as instancias unicas
+// do dealer e do baralho. Alem disso sempre limpamos a mao do delaer no começo da partida.
+
 public class BlackJackService {
     private final Baralho baralho;
     private final Jogador jogador;
     private final Dealer dealer;
 
-    public BlackJackService(PlayerFactory playerFactory) {
-        this.baralho = new Baralho();
+    public BlackJackService(PlayerFactory playerFactory, String nomeJogador) {
+        this.baralho = Baralho.getInstance();
 
-        // Com a factory, criamos o jogadore e o dealer, antes do jogo começar.
-
-        this.jogador = playerFactory.criarJogador();
+        this.jogador = playerFactory.criarJogador(nomeJogador);
         this.dealer = playerFactory.criarDealer();
     }
 
@@ -26,11 +27,7 @@ public class BlackJackService {
         var continuarJogador = true;
         var continuarDealer = true;
 
-        print("--- * Bem vindo ao BlackJack jogador * ---");
-        print("Tente a sorte contra nosso Daeler.");
-
-        print("--* Precione enter para começar *--");
-        scanner.nextLine();
+        dealer.limparMao();
 
         cartasIniciais();
 
@@ -47,28 +44,29 @@ public class BlackJackService {
             return;
         }
 
-        print("--* Rodada do jogador *--");
-
-        while (jogador.getPontuacao() < 21 && continuarJogador) {
-            System.out.println("Deseja mais uma carta jogador? s / n");
-            if (scanner.nextLine().equals("s")) {
-                jogador.adicionarCarta(baralho.puxarCarta());
-                mostrarMaoJogador();
-                if (jogador.getJoker()) {
-                    print("--**--");
-                    print("Jogador tem um joker! Parabéns, você ganhou com ajuda...");
-                    return;
+        if (jogador.getPontuacao() < 21) {
+            print("--* Rodada do jogador *--");
+            while (jogador.getPontuacao() < 21 && continuarJogador) {
+                System.out.println("Deseja mais uma carta " + jogador.getNome() + "? s / n");
+                if (scanner.nextLine().equals("s")) {
+                    jogador.adicionarCarta(baralho.puxarCarta());
+                    mostrarMaoJogador();
+                    if (jogador.getJoker()) {
+                        print("--**--");
+                        print("Jogador tem um joker! Parabéns, você ganhou com ajuda...");
+                        return;
+                    }
+                } else {
+                    continuarJogador = false;
+                    break;
                 }
-            } else {
-                continuarJogador = false;
-                break;
             }
         }
 
-        print("--* Rodada do dealer *--");
-
         if (jogador.getPontuacao() < 21) {
+            print("--* Rodada do dealer *--");
             while (dealer.getPontuacao() < 21 && continuarDealer) {
+                print("Mão do dealer: " + dealer.imprimirMao());
                 System.out.println("Deseja mais uma carta dealer?");
 
                 if (dealer.validarPuxarCarta(jogador.getPontuacao(), dealer.getPontuacao())) {
@@ -103,12 +101,10 @@ public class BlackJackService {
 
     public boolean vitoriaImediataJogador() {
         if (this.jogador.getJoker()) {
-            print("Mão do jogador: " + this.jogador.imprimirMao());
             print("--**--");
             print("Jogador tem um joker! Parabéns, você ganhou com ajuda...");
             return true;
         } else if (this.jogador.getPontuacao() == 21) {
-            print("Mão do jogador: " + this.jogador.imprimirMao());
             print("--**--");
             print("Jogador tem 21! Parabéns, você ganhou de primeira!");
             return true;
@@ -118,6 +114,7 @@ public class BlackJackService {
 
     public boolean vitoriaImediataDealer() {
         if (this.dealer.getJoker()) {
+            print("Mão do dealer: " + this.dealer.imprimirMao());
             print("Dealer tem um joker hahahaha");
             print("--**--");
             print("Dessa vez o dealer riu mais alto hahahaha");
@@ -127,7 +124,7 @@ public class BlackJackService {
     }
 
     private void mostrarMaoJogador() {
-        print("Mão do jogador: " + jogador.imprimirMao());
+        print("Mão do jogador " + jogador.getNome() + ": " + jogador.imprimirMao());
         print("Jogador tem uma mão total de " + jogador.getPontuacao());
     }
 
@@ -136,7 +133,7 @@ public class BlackJackService {
         print("Dealer tem uma mão total de " + dealer.getPontuacao());
     }
 
-    private void determinarVencedor(){
+    private void determinarVencedor() {
         mostrarMaoJogador();
         mostrarMaoDealer();
 
